@@ -11,11 +11,6 @@
 
 			<h1>
 				{fruit.name}
-				{?fruit.hasRating}
-					(rated {fruit.rating})
-				{:else}
-					(no ratings)
-				{/fruit.hasRating}
 			</h1>
 
 			{?fruit.description}
@@ -36,7 +31,7 @@
 
 	<div class="o-grid-row">
 
-		<div data-o-grid-colspan="6">
+		<div data-o-grid-colspan="12 M6">
 			{?userRating}
 				<h2>Your Rating</h2>
 			{:else}
@@ -90,9 +85,9 @@
 			</form>
 		</div>
 
-		<div data-o-grid-colspan="6">
+		<div data-o-grid-colspan="12 M6">
 
-			<h2>All Ratings ({fruit.rating})</h2>
+			<h2>All Ratings{?fruit.hasRating}{~s}({fruit.rating}){/fruit.hasRating}</h2>
 
 			{?allRatings}
 				{>"partial/rating/list" ratings=allRatings/}
