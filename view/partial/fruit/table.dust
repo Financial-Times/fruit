@@ -1,0 +1,48 @@
+
+<table class="o-table o-table--row-stripes" data-o-component="o-table">
+	<thead>
+		<tr>
+			<th {^sortable}data-o-table-heading-disable-sort{/sortable}>Fruit</th>
+			<th {^sortable}data-o-table-heading-disable-sort{/sortable} data-o-table-data-type="numeric" class="o-table__cell--numeric">Rating</th>
+			<th {^sortable}data-o-table-heading-disable-sort{/sortable} data-o-table-data-type="numeric" class="o-table__cell--numeric">Number of Ratings</th>
+		</tr>
+	</thead>
+	<tbody>
+		{#fruit}
+			<tr>
+				<td>
+					<strong><a href="/fruit/{id}" class="o-typography-link">{name}</a></strong>{?altNames}{~s}(Also known as: {#altNames}{.}{@sep},{~s}{/sep}{/altNames}){/altNames}<br/>
+					{?description}{description}{/description}
+				</td>
+				<td class="o-table__cell--numeric">
+					{?hasRating}{rating}{:else}-{/hasRating}
+				</td>
+				<td class="o-table__cell--numeric">
+					{ratingCount}
+				</td>
+			</tr>
+			<!-- <li>
+				<h3>
+					<a href="/fruit/{id}" class="o-typography-link">{name}</a>
+					{?hasRating}
+						(rated {rating}/10)
+					{:else}
+						(no ratings)
+					{/hasRating}
+				</h3>
+				{?description}
+					<p>{description}</p>
+				{/description}
+				{?altNames}
+					<p>
+						Also known as:
+						{#altNames}
+							{.}{@sep},{~s}{/sep}
+						{/altNames}
+					</p>
+				{/altNames}
+			</li> -->
+
+		{/fruit}
+	</tbody>
+</table>

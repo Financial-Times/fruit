@@ -75,7 +75,8 @@ function initFruitModel(fruitApp) {
 					dateUpdated: this.get('updated_at')
 				},
 				hasRating: (averages.length > 0),
-				rating
+				rating,
+				ratingCount: averages.length
 			};
 		},
 

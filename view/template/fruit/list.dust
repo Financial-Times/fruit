@@ -11,11 +11,7 @@
 
 			<h1>All Fruit</h1>
 
-			<p>
-				Here's a list of all the fruit:
-			</p>
-
-			{>"partial/fruit/list" fruit=fruit/}
+			{>"partial/fruit/table" fruit=fruit sortable=1/}
 
 		</div>
 	</div>
