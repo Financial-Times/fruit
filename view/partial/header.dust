@@ -17,14 +17,13 @@
 	<nav class="o-header-services__primary-nav">
 		<div class="o-header-services__container">
 			<ul class="o-layout__primary-nav o-header-services__nav-list">
-
 				<li class="o-header-services__nav-item">
-					<a class="o-header-services__nav-link" href="/">
+					<a class="o-header-services__nav-link {@currentUrl test="/"}o-header-services__nav-link--selected{/currentUrl}" href="/" {@currentUrl test="/"}aria-selected="true"{/currentUrl}>
 						Home
 					</a>
 				</li><li class="o-header-services__nav-item">
-					<a class="o-header-services__nav-link" href="/fruit">
-						All Fruit
+					<a class="o-header-services__nav-link {@currentUrl test="/fruit/"}o-header-services__nav-link--selected{/currentUrl}" href="/fruit" {@currentUrl test="/fruit/"}aria-selected="true"{/currentUrl}>
+						Fruit
 					</a>
 				</li>
 
@@ -46,12 +45,12 @@
 			<ul class="o-header__drawer-menu-list">
 
 				<li class="o-header__drawer-menu-item">
-					<a class="o-header__drawer-menu-link" href="/">
+					<a class="o-header__drawer-menu-link {@currentUrl test="/"}o-header__drawer-menu-link--selected{/currentUrl}" href="/" {@currentUrl test="/"}aria-selected="true"{/currentUrl}>
 						Home
 					</a>
 				</li><li class="o-header__drawer-menu-item">
-					<a class="o-header__drawer-menu-link" href="/fruit">
-						All Fruit
+					<a class="o-header__drawer-menu-link {@currentUrl test="/fruit/"}o-header__drawer-menu-link--selected{/currentUrl}" href="/fruit" {@currentUrl test="/fruit/"}aria-selected="true"{/currentUrl}>
+						Fruit
 					</a>
 				</li>
 

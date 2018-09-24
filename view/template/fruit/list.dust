@@ -1,7 +1,7 @@
 {>"layout/full"/}
 
 {<title}
-	All Fruit - Fruit
+	Fruit - Fruit
 {/title}
 
 {<content}
@@ -9,7 +9,7 @@
 	<div class="o-grid-row">
 		<div data-o-grid-colspan="12">
 
-			<h1>All Fruit</h1>
+			<h1>Fruit</h1>
 
 			{>"partial/fruit/table" fruit=fruit sortable=1/}
 
