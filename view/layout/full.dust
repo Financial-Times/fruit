@@ -1,0 +1,27 @@
+{>"layout/base"/}
+
+{! A layout with all of the trimmings !}
+
+{<body}
+
+	<header role="banner">
+		{+primary-nav}
+			{>"partial/nav/main"/}
+		{/primary-nav}
+		{+secondary-nav/}
+	</header>
+
+	<div role="main" class="page">
+		<div class="page-inner">
+			{+content/}
+		</div>
+	</div>
+
+	<footer role="contentinfo">
+		{>"partial/nav/footer"/}
+		<div class="copyright">
+			<small>Copyright &copy; {@currentYear/}, Financial Times</small>
+		</div>
+	</footer>
+
+{/body}

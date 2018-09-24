@@ -1,0 +1,10 @@
+
+<nav class="navigation navigation--footer">
+	<ul>
+		<li>
+			<a href="https://github.com/Financial-Times/fruit" class="navigation__item">
+				GitHub Repository
+			</a>
+		</li>
+	</ul>
+</nav>
