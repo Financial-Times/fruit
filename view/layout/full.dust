@@ -4,24 +4,12 @@
 
 {<body}
 
-	<header role="banner">
-		{+primary-nav}
-			{>"partial/nav/main"/}
-		{/primary-nav}
-		{+secondary-nav/}
-	</header>
+	{>"partial/header"/}
 
-	<div role="main" class="page">
-		<div class="page-inner">
-			{+content/}
-		</div>
+	<div class="page o-grid-container" role="main">
+		{+content/}
 	</div>
 
-	<footer role="contentinfo">
-		{>"partial/nav/footer"/}
-		<div class="copyright">
-			<small>Copyright &copy; {@currentYear/}, Financial Times</small>
-		</div>
-	</footer>
+	{>"partial/footer"/}
 
 {/body}

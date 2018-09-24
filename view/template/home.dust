@@ -6,8 +6,16 @@
 
 {<content}
 
-	<h1>Fruit</h1>
+	<div class="o-grid-row">
+		<div data-o-grid-colspan="12">
 
-	<p>Hello World!</p>
+			<h1>Fruit</h1>
+
+			<p>
+				Welcome to Fruit, a comprehensive rating system for fruit at the FT.
+			</p>
+
+		</div>
+	</div>
 
 {/content}

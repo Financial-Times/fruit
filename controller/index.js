@@ -24,16 +24,26 @@ function initControllers(fruitApp) {
 	// Sign in with s3o
 	router.use(authS3O);
 
-	// Get the authenticated user
-	router.use((request, response, next) => {
-		request.authUser = request.cookies.s3o_username;
+	// Create/Get the authenticated user
+	router.use(async (request, response, next) => {
+		if (request.cookies.s3o_username) {
+			// TODO this probably isn't secure
+			const user = await fruitApp.model.User.fetchOneByUsername(request.cookies.s3o_username);
+			if (!user) {
+				request.authUser = await fruitApp.model.User.create({
+					s3o_username: request.cookies.s3o_username
+				});
+			} else {
+				request.authUser = user;
+			}
+		}
 		next();
 	});
 
 	// Add default view data
 	router.use((request, response, next) => {
 		response.locals.appUrl = request.appUrl;
-		response.locals.authUser = request.authUser;
+		response.locals.authUser = (request.authUser ? request.authUser.serialize() : null);
 		response.locals.permissions = request.permissions;
 		response.locals.requestPath = request.path;
 		response.locals.requestUrl = request.url;

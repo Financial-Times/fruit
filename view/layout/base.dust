@@ -1,10 +1,45 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en-GB" class="core">
 <head>
+
 	<meta charset="utf-8"/>
 	<title>{+title/}</title>
-	<meta name="viewport" content="width=device-width"/>
-	<!--[if gt IE 8]><!--><link rel="stylesheet" href="/main.css"/><!--<![endif]-->
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<!-- Cuts the mustard test -->
+	<script>
+		var cutsTheMustard = ('querySelector' in document && 'localStorage' in window && 'addEventListener' in window);
+		if (cutsTheMustard) {
+			document.documentElement.className = document.documentElement.className.replace(/\bcore\b/g, 'enhanced');
+		}
+	</script>
+
+	<!-- Styles -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<style>
+		/* Hide any enhanced experience content when in core mode, and vice versa. */
+		.core .o--if-js,
+		.enhanced .o--if-no-js {
+			display: none !important;
+		}
+	</style>
+	<link rel="stylesheet" href="https://www.ft.com/__origami/service/build/v2/bundles/css?modules=o-typography@^5.7.5,o-grid@^4.4.4,o-header-services@^2.3.3,o-footer-services@^2.0.1&brand=internal" />
+	<link rel="stylesheet" href="/main.css" />
+
+	<!-- JavaScript -->
+	<script>
+		(function(src) {
+			if (cutsTheMustard) {
+				var o = document.createElement('script');
+				o.async = o.defer = true;
+				o.src = src;
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(o, s);
+			}
+		}('https://www.ft.com/__origami/service/build/v2/bundles/js?modules=o-typography@^5.7.5,o-grid@^4.4.4,o-header-services@^2.3.3,o-footer-services@^2.0.1&brand=internal'));
+	</script>
+
 </head>
 <body>
 

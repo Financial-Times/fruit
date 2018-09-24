@@ -6,29 +6,35 @@
 
 {<content}
 
-	<h1>Error {error.status}: {error.message}</h1>
+	<div class="o-grid-row">
+		<div data-o-grid-colspan="12">
 
-	{@select key=error.status}
+			<h1>Error {error.status}: {error.message}</h1>
 
-		{@eq value=401}
-			<p>You must <a href="/login?referer={requestPath}">log in</a> before you'll be able to access this page</p>
-		{/eq}
+			{@select key=error.status}
 
-		{@eq value=404}
-			<p>The page you're looking for can't be found.</p>
-		{/eq}
+				{@eq value=401}
+					<p>You must <a href="/login?referer={requestPath}">log in</a> before you'll be able to access this page</p>
+				{/eq}
 
-		{@eq value=500}
-			<p>Something went wrong internally.</p>
-		{/eq}
+				{@eq value=404}
+					<p>The page you're looking for can't be found.</p>
+				{/eq}
 
-	{/select}
+				{@eq value=500}
+					<p>Something went wrong internally.</p>
+				{/eq}
 
-	{! We only send the stack if the app is running in development mode !}
-	{?error.stack}
-		<hr/>
-		<p>Note: you can see the full error because Fruit is running in development mode:</p>
-		<pre>{error.stack}</pre>
-	{/error.stack}
+			{/select}
+
+			{! We only send the stack if the app is running in development mode !}
+			{?error.stack}
+				<hr/>
+				<p>Note: you can see the full error because Fruit is running in development mode:</p>
+				<pre>{error.stack}</pre>
+			{/error.stack}
+
+		</div>
+	</div>
 
 {/content}

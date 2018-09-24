@@ -22,7 +22,6 @@
   "dependencies": {
     "@financial-times/s3o-middleware": "^2.0.6",
     "adaro": "^1.0.4",
-    "bcrypt": "^3.0.1",
     "bookshelf": "^0.12.1",
     "compression": "^1.7.1",
     "dotenv": "^4.0.0",
