@@ -60,9 +60,7 @@ function initFruitModel(fruitApp) {
 
 		// Override default serialization so we can control output
 		serialize() {
-			const averages = this.related('ratings').map(rating => rating.get('rating_average'));
-			const ratingFull = averages.reduce((a, b) => a + b, 0) / averages.length;
-			const rating = Math.round(ratingFull * 10) / 10;
+			const ratingCount = this.related('ratings').length;
 			return {
 				id: this.get('id'),
 				creatorId: this.get('creator_id'),
@@ -74,15 +72,47 @@ function initFruitModel(fruitApp) {
 					dateCreated: this.get('created_at'),
 					dateUpdated: this.get('updated_at')
 				},
-				hasRating: (averages.length > 0),
-				rating,
-				ratingCount: averages.length
+				hasRatings: (ratingCount > 0),
+				ratingCount: ratingCount,
+				score: this.get('score')
 			};
 		},
 
 		// Rating relationship
 		ratings() {
 			return this.hasMany(fruitApp.model.FruitRating);
+		},
+
+		// Model virtual methods
+		outputVirtuals: false,
+		virtuals: {
+
+			// Get the FruitScore™
+			score() {
+				const ratings = this.related('ratings');
+				let score = 0;
+
+				// Each rating is worth 20 points:
+				// 10 points for taste
+				// 5 points for mouthfeel (real score halved)
+				// 5 points for preparation (real score halved)
+				score = ratings.reduce((total, rating) => {
+					return total + (
+						rating.get('rating_taste') +
+						(rating.get('rating_mouthfeel') / 2) +
+						(rating.get('rating_preparation') / 2)
+					);
+				}, score);
+
+				// 10 bonus points are awarded for popular fruit (1 point per rating up to a max of 10)
+				score += Math.min(ratings.length, 10);
+
+				// Calculate the score as a percentage of the max possible,
+				// then divide by 10 to get an out-of-10 score
+				const maxPossibleScore = (ratings.length * 20) + 10;
+				return Math.round((score / maxPossibleScore) * 100) / 10;
+			}
+
 		}
 
 	// Model static methods

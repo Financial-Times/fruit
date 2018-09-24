@@ -87,7 +87,11 @@
 
 		<div data-o-grid-colspan="12 M6">
 
-			<h2>All Ratings{?fruit.hasRating}{~s}({fruit.rating}){/fruit.hasRating}</h2>
+			<h2>All Ratings</h2>
+
+			{?fruit.hasRatings}
+				<p>{fruit.name} has a FruitScore&trade; of <strong>{fruit.score}</strong></p>
+			{/fruit.hasRatings}
 
 			{?allRatings}
 				{>"partial/rating/list" ratings=allRatings/}
