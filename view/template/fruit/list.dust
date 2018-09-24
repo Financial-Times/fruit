@@ -1,0 +1,23 @@
+{>"layout/full"/}
+
+{<title}
+	All Fruit - Fruit
+{/title}
+
+{<content}
+
+	<div class="o-grid-row">
+		<div data-o-grid-colspan="12">
+
+			<h1>All Fruit</h1>
+
+			<p>
+				Here's a list of all the fruit:
+			</p>
+
+			{>"partial/fruit/list" fruit=fruit/}
+
+		</div>
+	</div>
+
+{/content}

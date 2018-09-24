@@ -23,8 +23,8 @@
 						Home
 					</a>
 				</li><li class="o-header-services__nav-item">
-					<a class="o-header-services__nav-link" href="/checklist/">
-						Checklist
+					<a class="o-header-services__nav-link" href="/fruit">
+						All Fruit
 					</a>
 				</li>
 
@@ -50,8 +50,8 @@
 						Home
 					</a>
 				</li><li class="o-header__drawer-menu-item">
-					<a class="o-header__drawer-menu-link" href="/checklist/">
-						Checklist
+					<a class="o-header__drawer-menu-link" href="/fruit">
+						All Fruit
 					</a>
 				</li>
 

@@ -62,6 +62,7 @@ function initFruitModel(fruitApp) {
 		serialize() {
 			return {
 				id: this.get('id'),
+				creatorId: this.get('creator_id'),
 				name: this.get('name'),
 				altNames: this.get('alt_names'),
 				description: this.get('description'),
@@ -82,7 +83,8 @@ function initFruitModel(fruitApp) {
 				name: data.name,
 				altNames: data.alt_names,
 				description: data.description,
-				imageUrl: data.image_url
+				imageUrl: data.image_url,
+				creator_id: data.creator_id
 			});
 			await fruit.save();
 			return fruit;

@@ -35,3 +35,12 @@ h1 {
 	font-size: 32px;
 	line-height: 32px;
 }
+
+h1 {
+	font-size: 28px;
+	line-height: 32px;
+}
+
+.o-forms__number {
+	width: 50px;
+}

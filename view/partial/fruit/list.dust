@@ -1,0 +1,19 @@
+
+<ol>
+	{#fruit}
+
+		<li>
+			<h3><a href="/fruit/{id}" class="o-typography-link">{name}</a></h3>
+			<p>{description}</p>
+			{?altNames}
+				<p>
+					Also known as:
+					{#altNames}
+						{.}{@sep},{~s}{/sep}
+					{/altNames}
+				</p>
+			{/altNames}
+		</li>
+
+	{/fruit}
+</ol>

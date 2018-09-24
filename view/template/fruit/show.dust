@@ -1,0 +1,100 @@
+{>"layout/full"/}
+
+{<title}
+	{fruit.name} - Fruit
+{/title}
+
+{<content}
+
+	<div class="o-grid-row">
+		<div data-o-grid-colspan="12">
+
+			<h1>{fruit.name}</h1>
+
+			<p>{fruit.description}</p>
+
+			{?fruit.altNames}
+				<p>
+					Also known as:
+					{#fruit.altNames}
+						{.}{@sep},{~s}{/sep}
+					{/fruit.altNames}
+				</p>
+			{/fruit.altNames}
+
+		</div>
+	</div>
+
+	<div class="o-grid-row">
+
+		<div data-o-grid-colspan="6">
+			{?userRating}
+				<h2>Your Rating</h2>
+			{:else}
+				<h2>Rate This Fruit</h2>
+			{/userRating}
+
+			<form action="/fruit/{fruit.id}" method="post">
+
+				<div class="o-forms o-forms--inline">
+					<div class="o-forms__inline-item">
+						<label aria-describedby="rating-taste-description" for="rating-taste" class="o-forms__label">Taste</label>
+						<div id="rating-taste-description" class="o-forms__additional-info">
+							How good does this fruit taste on a scale of 1–10? 1 being vomit-inducing and 10 giving you an overwhelming sense of connectedness with all living things.
+						</div>
+					</div>
+					<input type="number" id="rating-taste" name="taste" class="o-forms__text o-forms__number" min="1" max="10" value="{?userRating}{userRating.scores.taste}{:else}5{/userRating}" />
+				</div>
+
+				<div class="o-forms o-forms--inline">
+					<div class="o-forms__inline-item">
+						<label aria-describedby="rating-mouthfeel-description" for="rating-mouthfeel" class="o-forms__label">Mouthfeel</label>
+						<div id="rating-mouthfeel-description" class="o-forms__additional-info">
+							How is the fruit's mouthfeel on a scale of 1–10? 1 being very unpleasant and 10 being better than how your mouth normally feels.
+						</div>
+					</div>
+					<input type="number" id="rating-mouthfeel" name="mouthfeel" class="o-forms__text o-forms__number" min="1" max="10" value="{?userRating}{userRating.scores.mouthfeel}{:else}5{/userRating}" />
+				</div>
+
+				<div class="o-forms o-forms--inline">
+					<div class="o-forms__inline-item">
+						<label aria-describedby="rating-preparation-description" for="rating-preparation" class="o-forms__label">Preparation</label>
+						<div id="rating-preparation-description" class="o-forms__additional-info">
+							How easy is this fruit to prepare for eating on a scale of 1–10? 1 being very difficult and 10 being instant.
+						</div>
+					</div>
+					<input type="number" id="rating-preparation" name="preparation" class="o-forms__text o-forms__number" min="1" max="10" value="{?userRating}{userRating.scores.preparation}{:else}5{/userRating}" />
+				</div>
+
+				<div class="o-forms">
+					<label aria-describedby="rating-comments-description" for="rating-comments" class="o-forms__label o-forms__label--optional">Comments</label>
+					<div id="rating-comments-description" class="o-forms__additional-info">
+						Any additional comments you have on your experience eating this fruit.
+					</div>
+					<textarea id="rating-comments" name="comments" class="o-forms__textarea">{?userRating}{userRating.comments}{/userRating}</textarea>
+				</div>
+
+				<div class="o-forms">
+					<input type="submit" value="{?userRating}Update Rating{:else}Rate This Fruit!{/userRating}" class="o-buttons o-buttons--primary o-buttons o-buttons--big" />
+				</div>
+
+			</form>
+		</div>
+
+		<div data-o-grid-colspan="6">
+
+			<h2>All Ratings</h2>
+
+			{?allRatings}
+				{#allRatings}
+					{>"partial/rating/list" ratings=allRatings/}
+				{/allRatings}
+			{:else}
+				<p>There are no ratings for this fruit yet! Be the first :)</p>
+			{/allRatings}
+
+		</div>
+
+	</div>
+
+{/content}

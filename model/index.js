@@ -1,6 +1,8 @@
 'use strict';
 
 const initUserModel = require('./user');
+const initFruitModel = require('./fruit');
+const initFruitRatingModel = require('./fruit-rating');
 
 /**
  * Initialise the models.
@@ -9,7 +11,9 @@ const initUserModel = require('./user');
  */
 function initModels(fruitApp) {
 	return {
-		User: initUserModel(fruitApp)
+		User: initUserModel(fruitApp),
+		Fruit: initFruitModel(fruitApp),
+		FruitRating: initFruitRatingModel(fruitApp)
 	};
 }
 
