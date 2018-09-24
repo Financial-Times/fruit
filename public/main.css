@@ -44,3 +44,7 @@ h2 {
 .o-forms__number {
 	width: 50px;
 }
+
+img {
+	max-width: 100%;
+}
