@@ -11,6 +11,10 @@
 
 			<h1>Fruit</h1>
 
+			<p>
+				Here is a list of all the fruit you can rate!
+			</p>
+
 			{>"partial/fruit/table" fruit=fruit sortable=1/}
 
 		</div>

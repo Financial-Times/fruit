@@ -11,6 +11,10 @@
 
 			<h1>People</h1>
 
+			<p>
+				These are all the fruit-loving people.
+			</p>
+
 			{>"partial/people/table" people=people sortable=1/}
 
 		</div>

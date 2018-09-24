@@ -7,16 +7,15 @@
 {<content}
 
 	<div class="o-grid-row">
-		<div data-o-grid-colspan="12">
+		<div data-o-grid-colspan="12 M6">
 
 			<h1>Fruit</h1>
 
 			<p>
 				Welcome to Fruit, a comprehensive rating system for fruit at the FT.
-			</p>
-
-			<p>
-				TODO there will be some rules and info here. For now, visit the <a href="/fruit" class="o-typography-link">All Fruit page</a>.
+				Everybody is welcome to rate fruit here as well as suggest new fruit to add.
+				This site was built as part of the FT Hackathon 2018 to replace the
+				<a href="https://docs.google.com/spreadsheets/d/1a69wBpkbF7beOa1McuWHoqBrfZ4nnzMsaThGOhDwpkQ/edit?usp=drive_web&ouid=100548026514371124702" class="o-typography-link o-typography-link--external">Origami Fruit Spreadsheet</a>.
 			</p>
 
 		</div>
