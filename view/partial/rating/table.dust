@@ -1,0 +1,27 @@
+
+<table class="o-table o-table--row-stripes" data-o-component="o-table">
+	<thead>
+		<tr>
+			<th {^sortable}data-o-table-heading-disable-sort{/sortable}>Rating</th>
+			<th {^sortable}data-o-table-heading-disable-sort{/sortable} data-o-table-data-type="numeric" class="o-table__cell--numeric">Average</th>
+			<th {^sortable}data-o-table-heading-disable-sort{/sortable} data-o-table-data-type="numeric" class="o-table__cell--numeric">Taste</th>
+			<th {^sortable}data-o-table-heading-disable-sort{/sortable} data-o-table-data-type="numeric" class="o-table__cell--numeric">Mouthfeel</th>
+			<th {^sortable}data-o-table-heading-disable-sort{/sortable} data-o-table-data-type="numeric" class="o-table__cell--numeric">Preparation</th>
+		</tr>
+	</thead>
+	<tbody>
+		{#ratings}
+			<tr>
+				<td>
+					<strong>{user.username}'s rating</strong>
+					{?description}{description}{/description}
+					(published <time data-o-component="o-date" class="o-date" datetime="{meta.dateCreated.toISOString}">{meta.dateCreated.toISOString}</time>)
+				</td>
+				<td class="o-table__cell--numeric">{scores.average}</td>
+				<td class="o-table__cell--numeric">{scores.taste}</td>
+				<td class="o-table__cell--numeric">{scores.mouthfeel}</td>
+				<td class="o-table__cell--numeric">{scores.preparation}</td>
+			</tr>
+		{/ratings}
+	</tbody>
+</table>

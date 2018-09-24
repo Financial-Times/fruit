@@ -22,7 +22,7 @@
 						Home
 					</a>
 				</li><li class="o-header-services__nav-item">
-					<a class="o-header-services__nav-link {@currentUrl test="/fruit/"}o-header-services__nav-link--selected{/currentUrl}" href="/fruit" {@currentUrl test="/fruit/"}aria-selected="true"{/currentUrl}>
+					<a class="o-header-services__nav-link {@currentUrl test="/fruit*"}o-header-services__nav-link--selected{/currentUrl}" href="/fruit" {@currentUrl test="/fruit*"}aria-selected="true"{/currentUrl}>
 						Fruit
 					</a>
 				</li>
@@ -49,7 +49,7 @@
 						Home
 					</a>
 				</li><li class="o-header__drawer-menu-item">
-					<a class="o-header__drawer-menu-link {@currentUrl test="/fruit/"}o-header__drawer-menu-link--selected{/currentUrl}" href="/fruit" {@currentUrl test="/fruit/"}aria-selected="true"{/currentUrl}>
+					<a class="o-header__drawer-menu-link {@currentUrl test="/fruit*"}o-header__drawer-menu-link--selected{/currentUrl}" href="/fruit" {@currentUrl test="/fruit*"}aria-selected="true"{/currentUrl}>
 						Fruit
 					</a>
 				</li>

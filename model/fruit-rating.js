@@ -125,7 +125,7 @@ function initFruitRatingModel(fruitApp) {
 		// Fetch all fruit ratings
 		fetchAll() {
 			return FruitRating.collection().query(qb => {
-				qb.orderBy('name', 'asc');
+				qb.orderBy('created_at', 'desc');
 			}).fetch({
 				withRelated: [
 					'user',
@@ -161,6 +161,7 @@ function initFruitRatingModel(fruitApp) {
 		fetchByFruit(fruitId) {
 			return FruitRating.collection().query(qb => {
 				qb.where('fruit_id', fruitId);
+				qb.orderBy('created_at', 'desc');
 			}).fetch({
 				withRelated: [
 					'user'

@@ -94,7 +94,7 @@
 			{/fruit.hasRatings}
 
 			{?allRatings}
-				{>"partial/rating/list" ratings=allRatings/}
+				{>"partial/rating/table" ratings=allRatings sortable=1/}
 			{:else}
 				<p>There are no ratings for this fruit yet! Be the first :)</p>
 			{/allRatings}
