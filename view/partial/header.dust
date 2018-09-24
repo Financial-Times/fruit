@@ -25,6 +25,10 @@
 					<a class="o-header-services__nav-link {@currentUrl test="/fruit*"}o-header-services__nav-link--selected{/currentUrl}" href="/fruit" {@currentUrl test="/fruit*"}aria-selected="true"{/currentUrl}>
 						Fruit
 					</a>
+				</li><li class="o-header-services__nav-item">
+					<a class="o-header-services__nav-link {@currentUrl test="/people*"}o-header-services__nav-link--selected{/currentUrl}" href="/people" {@currentUrl test="/people*"}aria-selected="true"{/currentUrl}>
+						People
+					</a>
 				</li>
 
 			</ul>
@@ -51,6 +55,10 @@
 				</li><li class="o-header__drawer-menu-item">
 					<a class="o-header__drawer-menu-link {@currentUrl test="/fruit*"}o-header__drawer-menu-link--selected{/currentUrl}" href="/fruit" {@currentUrl test="/fruit*"}aria-selected="true"{/currentUrl}>
 						Fruit
+					</a>
+				</li><li class="o-header__drawer-menu-item">
+					<a class="o-header__drawer-menu-link {@currentUrl test="/people*"}o-header__drawer-menu-link--selected{/currentUrl}" href="/people" {@currentUrl test="/people*"}aria-selected="true"{/currentUrl}>
+						People
 					</a>
 				</li>
 

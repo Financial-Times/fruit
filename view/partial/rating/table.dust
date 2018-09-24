@@ -2,22 +2,40 @@
 <table class="o-table o-table--row-stripes" data-o-component="o-table">
 	<thead>
 		<tr>
-			<th {^sortable}data-o-table-heading-disable-sort{/sortable}>Rating</th>
-			<th {^sortable}data-o-table-heading-disable-sort{/sortable} data-o-table-data-type="numeric" class="o-table__cell--numeric">Average</th>
-			<th {^sortable}data-o-table-heading-disable-sort{/sortable} data-o-table-data-type="numeric" class="o-table__cell--numeric">Taste</th>
-			<th {^sortable}data-o-table-heading-disable-sort{/sortable} data-o-table-data-type="numeric" class="o-table__cell--numeric">Mouthfeel</th>
-			<th {^sortable}data-o-table-heading-disable-sort{/sortable} data-o-table-data-type="numeric" class="o-table__cell--numeric">Preparation</th>
+			{@select key="{context}"}
+				{@eq value="person"}
+					<th {^sortable}data-o-table-heading-disable-sort{/sortable}>Fruit</th>
+				{/eq}
+				{@eq value="fruit"}
+					<th {^sortable}data-o-table-heading-disable-sort{/sortable}>Rating</th>
+				{/eq}
+			{/select}
+			<th {^sortable}data-o-table-heading-disable-sort{/sortable} data-o-table-data-type="numeric" class="o-table__cell--numeric"><abbr title="Average">Avg</abbr></th>
+			<th {^sortable}data-o-table-heading-disable-sort{/sortable} data-o-table-data-type="numeric" class="o-table__cell--numeric"><abbr title="Taste">Taste</abbr></th>
+			<th {^sortable}data-o-table-heading-disable-sort{/sortable} data-o-table-data-type="numeric" class="o-table__cell--numeric"><abbr title="Mouthfeel">Feel</abbr></th>
+			<th {^sortable}data-o-table-heading-disable-sort{/sortable} data-o-table-data-type="numeric" class="o-table__cell--numeric"><abbr title="Preparation">Prep</abbr></th>
 		</tr>
 	</thead>
 	<tbody>
 		{#ratings}
 			<tr>
-				<td>
-					<strong>{user.name}'s rating</strong>
-					{?description}{description}{/description}
-					(published <time data-o-component="o-date" class="o-date" datetime="{meta.dateCreated.toISOString}">{meta.dateCreated.toISOString}</time>)
-				</td>
-				<td class="o-table__cell--numeric">{scores.average}</td>
+				{@select key="{context}"}
+					{@eq value="person"}
+						<td>
+							<strong><a href="/fruit/{fruit.id}" class="o-typography-link">{fruit.name}</a></strong><br/>
+							{?comments}{comments}<br/>{/comments}
+							<em>published <time data-o-component="o-date" class="o-date" datetime="{meta.dateCreated.toISOString}">{meta.dateCreated.toISOString}</time></em>
+						</td>
+					{/eq}
+					{@eq value="fruit"}
+						<td>
+							<strong><a href="/people/{user.id}" class="o-typography-link">{user.name}</a>'s rating</strong><br/>
+							{?comments}{comments}<br/>{/comments}
+							<em>published <time data-o-component="o-date" class="o-date" datetime="{meta.dateCreated.toISOString}">{meta.dateCreated.toISOString}</time></em>
+						</td>
+					{/eq}
+				{/select}
+				<td class="o-table__cell--numeric"><strong>{scores.average}</strong></td>
 				<td class="o-table__cell--numeric">{scores.taste}</td>
 				<td class="o-table__cell--numeric">{scores.mouthfeel}</td>
 				<td class="o-table__cell--numeric">{scores.preparation}</td>

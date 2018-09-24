@@ -50,6 +50,7 @@ function initUserModel(fruitApp) {
 
 		// Override default serialization so we can control output
 		serialize() {
+			const ratingCount = this.related('ratings').length;
 			return {
 				id: this.get('id'),
 				name: this.get('name'),
@@ -58,8 +59,15 @@ function initUserModel(fruitApp) {
 				meta: {
 					dateCreated: this.get('created_at'),
 					dateUpdated: this.get('updated_at')
-				}
+				},
+				hasRatings: (ratingCount > 0),
+				ratingCount: ratingCount
 			};
+		},
+
+		// Rating relationship
+		ratings() {
+			return this.hasMany(fruitApp.model.FruitRating);
 		},
 
 		// Model virtual methods
@@ -90,14 +98,22 @@ function initUserModel(fruitApp) {
 		fetchAll() {
 			return User.collection().query(qb => {
 				qb.orderBy('s3o_username', 'asc');
-			}).fetch();
+			}).fetch({
+				withRelated: [
+					'ratings'
+				]
+			});
 		},
 
 		// Fetch a user by id
 		fetchOneById(userId) {
 			return User.collection().query(qb => {
 				qb.where('id', userId);
-			}).fetchOne();
+			}).fetchOne({
+				withRelated: [
+					'ratings'
+				]
+			});
 		},
 
 		// Fetch a user by s3o username

@@ -14,7 +14,6 @@ function initFruitController(fruitApp, router) {
 	// All fruit
 	router.get('/fruit', async (request, response) => {
 		const fruit = (await fruitApp.model.Fruit.fetchAll()).map(item => item.serialize());
-		// console.log(fruit);
 		response.render('template/fruit/list', {
 			fruit
 		});

@@ -150,6 +150,7 @@ function initFruitRatingModel(fruitApp) {
 		fetchByUser(userId) {
 			return FruitRating.collection().query(qb => {
 				qb.where('user_id', userId);
+				qb.orderBy('created_at', 'desc');
 			}).fetch({
 				withRelated: [
 					'fruit'

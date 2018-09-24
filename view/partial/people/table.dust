@@ -1,0 +1,22 @@
+
+<table class="o-table o-table--row-stripes" data-o-component="o-table">
+	<thead>
+		<tr>
+			<th {^sortable}data-o-table-heading-disable-sort{/sortable}>Person</th>
+			<th {^sortable}data-o-table-heading-disable-sort{/sortable} data-o-table-data-type="numeric" class="o-table__cell--numeric">Number of Ratings</th>
+		</tr>
+	</thead>
+	<tbody>
+		{#people}
+			<tr>
+				<td>
+					<strong><a href="/people/{id}" class="o-typography-link">{name}</a></strong><br/>
+					{?description}Username: {username}{/description}
+				</td>
+				<td class="o-table__cell--numeric">
+					{ratingCount}
+				</td>
+			</tr>
+		{/people}
+	</tbody>
+</table>

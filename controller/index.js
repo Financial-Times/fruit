@@ -4,6 +4,7 @@ const authS3O = require('@financial-times/s3o-middleware');
 const express = require('express');
 const initHomeController = require('./home');
 const initFruitController = require('./fruit');
+const initPeopleController = require('./people');
 const notFound = require('../lib/middleware/not-found');
 
 /**
@@ -54,6 +55,7 @@ function initControllers(fruitApp) {
 	// Mount routes
 	initHomeController(fruitApp, router);
 	initFruitController(fruitApp, router);
+	initPeopleController(fruitApp, router);
 
 	// Middleware to handle errors
 	router.use(notFound());

@@ -1,0 +1,25 @@
+{>"layout/full"/}
+
+{<title}
+	{person.name} - Fruit
+{/title}
+
+{<content}
+
+	<div class="o-grid-row">
+		<div data-o-grid-colspan="12">
+
+			<h1>
+				{person.name}'s Ratings
+			</h1>
+
+			{?allRatings}
+				{>"partial/rating/table" ratings=allRatings sortable=1 context="person"/}
+			{:else}
+				<p>This person hasn't rated any fruit yet!</p>
+			{/allRatings}
+
+		</div>
+	</div>
+
+{/content}

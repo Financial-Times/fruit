@@ -31,7 +31,7 @@
 
 	<div class="o-grid-row">
 
-		<div data-o-grid-colspan="12 M6">
+		<div data-o-grid-colspan="12 M5">
 			{?userRating}
 				<h2>Your Rating</h2>
 			{:else}
@@ -85,7 +85,7 @@
 			</form>
 		</div>
 
-		<div data-o-grid-colspan="12 M6">
+		<div data-o-grid-colspan="12 M7">
 
 			<h2>All Ratings</h2>
 
@@ -94,7 +94,7 @@
 			{/fruit.hasRatings}
 
 			{?allRatings}
-				{>"partial/rating/table" ratings=allRatings sortable=1/}
+				{>"partial/rating/table" ratings=allRatings sortable=1 context="fruit"/}
 			{:else}
 				<p>There are no ratings for this fruit yet! Be the first :)</p>
 			{/allRatings}
