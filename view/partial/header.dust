@@ -12,6 +12,9 @@
 			</h1>
 			<span class="o-header-subrand__product-tagline">For all your fruit rating needs</span>
 		</div>
+		<div class="o-header-services__related-content">
+			Logged in as <a class="o-header-services__related-content-link" href="/people/{authUser.id}">{authUser.name}</a>
+		</div>
 	</div>
 
 	<nav class="o-header-services__primary-nav">
