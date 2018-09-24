@@ -61,7 +61,8 @@ function initFruitModel(fruitApp) {
 		// Override default serialization so we can control output
 		serialize() {
 			const averages = this.related('ratings').map(rating => rating.get('rating_average'));
-			const rating = averages.reduce((a, b) => a + b, 0) / averages.length;
+			const ratingFull = averages.reduce((a, b) => a + b, 0) / averages.length;
+			const rating = Math.round(ratingFull * 10) / 10;
 			return {
 				id: this.get('id'),
 				creatorId: this.get('creator_id'),
