@@ -47,13 +47,13 @@ function initFruitController(fruitApp, router) {
 		body.taste = parseInt(body.taste, 10);
 		body.mouthfeel = parseInt(body.mouthfeel, 10);
 		body.preparation = parseInt(body.preparation, 10);
-		if (isNaN(body.taste)) {
+		if (isNaN(body.taste) || body.taste < 1 || body.taste > 10) {
 			return next(httpError(400));
 		}
-		if (isNaN(body.mouthfeel)) {
+		if (isNaN(body.mouthfeel) || body.mouthfeel < 1 || body.mouthfeel > 10) {
 			return next(httpError(400));
 		}
-		if (isNaN(body.preparation)) {
+		if (isNaN(body.preparation) || body.preparation < 1 || body.preparation > 10) {
 			return next(httpError(400));
 		}
 		body.comments = (body.comments ? body.comments.trim() || null : null);
