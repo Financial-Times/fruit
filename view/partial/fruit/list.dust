@@ -3,7 +3,14 @@
 	{#fruit}
 
 		<li>
-			<h3><a href="/fruit/{id}" class="o-typography-link">{name}</a></h3>
+			<h3>
+				<a href="/fruit/{id}" class="o-typography-link">{name}</a>
+				{?hasRating}
+					(rated {rating}/10)
+				{:else}
+					(no ratings)
+				{/hasRating}
+			</h3>
 			{?description}
 				<p>{description}</p>
 			{/description}

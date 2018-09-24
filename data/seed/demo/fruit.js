@@ -9,6 +9,11 @@ exports.seed = async database => {
 			id: 'm8b2xsek4',
 			s3o_username: 'rowan.manning',
 			is_admin: false
+		},
+		{
+			id: 'm8b2xsek3',
+			s3o_username: 'example.user',
+			is_admin: false
 		}
 	]);
 
@@ -580,6 +585,28 @@ exports.seed = async database => {
 			creator_id: 'm8b2xsek4',
 			alt_names: JSON.stringify([]),
 			description: `It's some kind of fruit`
+		}
+	]);
+
+	// Insert demo ratings
+	await database('fruit_rating').insert([
+		{
+			id: 'SaxTpS1V9',
+			user_id: 'm8b2xsek4',
+			fruit_id: 'TIn_gR3L9D',
+			rating_taste: 8,
+			rating_mouthfeel: 8,
+			rating_preparation: 8,
+			comments: 'Good fruit, well done'
+		},
+		{
+			id: 'YzKwPv5nB',
+			user_id: 'm8b2xsek3',
+			fruit_id: 'TIn_gR3L9D',
+			rating_taste: 3,
+			rating_mouthfeel: 3,
+			rating_preparation: 3,
+			comments: 'Bad fruit, do not recommend'
 		}
 	]);
 

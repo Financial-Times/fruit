@@ -9,7 +9,14 @@
 	<div class="o-grid-row">
 		<div data-o-grid-colspan="12">
 
-			<h1>{fruit.name}</h1>
+			<h1>
+				{fruit.name}
+				{?fruit.hasRating}
+					(rated {fruit.rating}/10)
+				{:else}
+					(no ratings)
+				{/fruit.hasRating}
+			</h1>
 
 			{?fruit.description}
 				<p>{fruit.description}</p>
@@ -88,9 +95,7 @@
 			<h2>All Ratings</h2>
 
 			{?allRatings}
-				{#allRatings}
-					{>"partial/rating/list" ratings=allRatings/}
-				{/allRatings}
+				{>"partial/rating/list" ratings=allRatings/}
 			{:else}
 				<p>There are no ratings for this fruit yet! Be the first :)</p>
 			{/allRatings}

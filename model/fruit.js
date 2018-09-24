@@ -60,6 +60,8 @@ function initFruitModel(fruitApp) {
 
 		// Override default serialization so we can control output
 		serialize() {
+			const averages = this.related('ratings').map(rating => rating.get('rating_average'));
+			const rating = averages.reduce((a, b) => a + b, 0) / averages.length;
 			return {
 				id: this.get('id'),
 				creatorId: this.get('creator_id'),
@@ -70,8 +72,15 @@ function initFruitModel(fruitApp) {
 				meta: {
 					dateCreated: this.get('created_at'),
 					dateUpdated: this.get('updated_at')
-				}
+				},
+				hasRating: (averages.length > 0),
+				rating
 			};
+		},
+
+		// Rating relationship
+		ratings() {
+			return this.hasMany(fruitApp.model.FruitRating);
 		}
 
 	// Model static methods
@@ -94,14 +103,22 @@ function initFruitModel(fruitApp) {
 		fetchAll() {
 			return Fruit.collection().query(qb => {
 				qb.orderBy('name', 'asc');
-			}).fetch();
+			}).fetch({
+				withRelated: [
+					'ratings'
+				]
+			});
 		},
 
 		// Fetch a fruit by id
 		fetchOneById(fruitId) {
 			return Fruit.collection().query(qb => {
 				qb.where('id', fruitId);
-			}).fetchOne();
+			}).fetchOne({
+				withRelated: [
+					'ratings'
+				]
+			});
 		}
 
 	});
