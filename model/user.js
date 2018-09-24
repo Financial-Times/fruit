@@ -1,6 +1,7 @@
 'use strict';
 
 const shortid = require('shortid');
+const startCase = require('lodash/startCase');
 
 /**
  * Initialise the User model.
@@ -51,6 +52,7 @@ function initUserModel(fruitApp) {
 		serialize() {
 			return {
 				id: this.get('id'),
+				name: this.get('name'),
 				username: this.get('s3o_username'),
 				isAdmin: this.get('isAdmin'),
 				meta: {
@@ -58,6 +60,17 @@ function initUserModel(fruitApp) {
 					dateUpdated: this.get('updated_at')
 				}
 			};
+		},
+
+		// Model virtual methods
+		outputVirtuals: false,
+		virtuals: {
+
+			// Guess the user's name. Gross
+			name() {
+				return startCase(this.get('s3o_username'));
+			}
+
 		}
 
 	// Model static methods

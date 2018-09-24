@@ -13,7 +13,7 @@
 		{#ratings}
 			<tr>
 				<td>
-					<strong>{user.username}'s rating</strong>
+					<strong>{user.name}'s rating</strong>
 					{?description}{description}{/description}
 					(published <time data-o-component="o-date" class="o-date" datetime="{meta.dateCreated.toISOString}">{meta.dateCreated.toISOString}</time>)
 				</td>

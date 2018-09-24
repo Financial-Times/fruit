@@ -13,10 +13,6 @@
 
 			{@select key=error.status}
 
-				{@eq value=401}
-					<p>You must <a href="/login?referer={requestPath}">log in</a> before you'll be able to access this page</p>
-				{/eq}
-
 				{@eq value=404}
 					<p>The page you're looking for can't be found.</p>
 				{/eq}
