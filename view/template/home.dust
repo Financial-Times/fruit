@@ -7,6 +7,7 @@
 {<content}
 
 	<div class="o-grid-row">
+
 		<div data-o-grid-colspan="12 M6">
 
 			<h1>Fruit</h1>
@@ -18,7 +19,37 @@
 				<a href="https://docs.google.com/spreadsheets/d/1a69wBpkbF7beOa1McuWHoqBrfZ4nnzMsaThGOhDwpkQ/edit?usp=drive_web&ouid=100548026514371124702" class="o-typography-link o-typography-link--external">Origami Fruit Spreadsheet</a>.
 			</p>
 
+			<h2>The Rules</h2>
+
+			<p>
+				We have a few rules when it comes to rating fruit. It's generally OK to rate a fruit if you've eaten the actual fruit.
+				If a fruit is only palatable when cooked then that's fine, but generally you shouldn't rate a fruit if:
+			</p>
+
+			<ul>
+				<li>You've only tried the juice of the fruit</li>
+				<li>You've only tried the fruit as a jam/conserve</li>
+				<li>You've only tried the fruit as part of an infused drink (e.g. Sloe Gin)</li>
+			</ul>
+
+			<p>
+				An exception for Lemons and Limes: a bite of a wedge counts as trying the fruit, e.g. with Tequila.
+			</p>
+
 		</div>
+
+		<div data-o-grid-colspan="12 M6">
+
+			<h2>Highest Scoring Fruit</h2>
+
+			{>"partial/fruit/table" fruit=highestScoringFruit/}
+
+			<h2>Most Prolific Fruit Raters</h2>
+
+			{>"partial/people/table" people=mostProlificRaters/}
+
+		</div>
+
 	</div>
 
 {/content}

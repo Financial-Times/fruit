@@ -1,5 +1,6 @@
 'use strict';
 
+const orderBy = require('lodash/orderBy');
 const shortid = require('shortid');
 const startCase = require('lodash/startCase');
 
@@ -103,6 +104,12 @@ function initUserModel(fruitApp) {
 					'ratings'
 				]
 			});
+		},
+
+		// Fetch most prolific X users (already serialized)
+		async fetchMostProlificX(count = 5) {
+			const users = await User.fetchAll();
+			return orderBy(users.map(item => item.serialize()), [item => item.ratingCount], ['desc']).slice(0, 5);
 		},
 
 		// Fetch a user by id

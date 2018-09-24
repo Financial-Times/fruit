@@ -1,5 +1,6 @@
 'use strict';
 
+const orderBy = require('lodash/orderBy');
 const shortid = require('shortid');
 
 /**
@@ -140,6 +141,12 @@ function initFruitModel(fruitApp) {
 					'ratings'
 				]
 			});
+		},
+
+		// Fetch top X fruit (already serialized)
+		async fetchTopX(count = 5) {
+			const fruit = await Fruit.fetchAll();
+			return orderBy(fruit.map(item => item.serialize()), [item => item.score], ['desc']).slice(0, 5);
 		},
 
 		// Fetch a fruit by id

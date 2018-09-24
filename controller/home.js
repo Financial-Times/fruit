@@ -9,8 +9,16 @@
 function initHomeController(fruitApp, router) {
 
 	// Home page
-	router.get('/', (request, response) => {
-		response.render('template/home');
+	router.get('/', async (request, response) => {
+
+		const highestScoringFruit = await fruitApp.model.Fruit.fetchTopX();
+		const mostProlificRaters = await fruitApp.model.User.fetchMostProlificX();
+
+		response.render('template/home', {
+			highestScoringFruit,
+			mostProlificRaters
+		});
+
 	});
 
 }
