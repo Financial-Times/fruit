@@ -11,7 +11,9 @@
 
 			<h1>{fruit.name}</h1>
 
-			<p>{fruit.description}</p>
+			{?fruit.description}
+				<p>{fruit.description}</p>
+			{/fruit.description}
 
 			{?fruit.altNames}
 				<p>
