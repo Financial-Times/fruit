@@ -57,7 +57,7 @@ function initFruitController(fruitApp, router) {
 		if (isNaN(body.preparation) || body.preparation < 1 || body.preparation > 10) {
 			return next(httpError(400));
 		}
-		body.comments = (body.comments ? body.comments.trim() || null : null);
+		body.comments = (body.comments ? body.comments.trim() || '' : '');
 
 		if (userRating) {
 			await userRating.update({
