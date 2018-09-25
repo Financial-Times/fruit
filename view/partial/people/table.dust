@@ -3,7 +3,7 @@
 	<thead>
 		<tr>
 			<th {^sortable}data-o-table-heading-disable-sort{/sortable}>Person</th>
-			<th {^sortable}data-o-table-heading-disable-sort{/sortable} data-o-table-data-type="numeric" class="o-table__cell--numeric">Number of Ratings</th>
+			<th {^sortable}data-o-table-heading-disable-sort{/sortable} data-o-table-data-type="numeric" class="o-table__cell--numeric"><abbr title="Number of ratings">Ratings</abbr></th>
 		</tr>
 	</thead>
 	<tbody>
