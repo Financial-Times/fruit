@@ -27,18 +27,27 @@ body {
 h1,
 h2,
 h3 {
-	font-family: FinancierDisplayWeb, serif;
-	font-weight: 700;
+	font-weight: 600;
+	color: #333;
+	font-family: MetricWeb, sans-serif;
 }
 
 h1 {
+	margin-top: 0;
+	margin-bottom: 20px;
 	font-size: 32px;
 	line-height: 32px;
 }
 
 h2 {
-	font-size: 28px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-size: 32px;
 	line-height: 32px;
+	font-weight: 400
+}
+h2:first-child {
+	margin-top: 0;
 }
 
 .o-forms__number {
@@ -47,4 +56,24 @@ h2 {
 
 img {
 	max-width: 100%;
+}
+
+.page ul:not([data-o-component^=o-]) {
+	list-style-type: none;
+	position: relative;
+	padding-left: 1.5rem
+}
+.page ul:not([data-o-component^=o-]) li {
+	margin-bottom: .5em
+}
+.page ul:not([data-o-component^=o-]) li:before {
+	content: '—';
+	position: absolute;
+	left: 0;
+	color: #0d7680;
+	font-weight: 900
+}
+.page ol:not([data-o-component^=o-]) {
+	position: relative;
+	padding-left: 1.5rem
 }
