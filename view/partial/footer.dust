@@ -2,7 +2,7 @@
 <footer class="o-footer-services">
 	<div class="o-footer-services__container">
 		<div class="o-footer-services__wrapper o-footer-services__wrapper--top">
-			<a class="o-footer-services__icon-link o-footer-services__icon-link--github" href="http://github.com/financial-times/fruit">View project on GitHub</a>
+			<a class="o-footer-services__icon-link o-footer-services__icon-link--github" href="http://github.com/Financial-Times/fruit">View project on GitHub</a>
 			<a class="o-footer-services__icon-link o-footer-services__icon-link--slack" href="https://financialtimes.slack.com/messages/fruit">#fruit</a>
 		</div>
 	</div>
