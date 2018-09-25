@@ -9,7 +9,7 @@ dotenv.config();
 
 // Grab configurations from environment variables
 const options = {
-	appUrl: process.env.app_URL,
+	appUrl: process.env.APP_URL,
 	databaseConnectionString: process.env.DATABASE_URL,
 	environment: process.env.NODE_ENV,
 	port: process.env.PORT,

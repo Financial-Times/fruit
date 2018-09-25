@@ -1,0 +1,17 @@
+{
+	"name": "Fruit",
+	"description": "A comprehensive rating system for fruit at the FT",
+	"keywords": [],
+	"website": "https://github.com/Financial-Times/Fruit",
+	"repository": "https://github.com/Financial-Times/Fruit",
+	"success_url": "/",
+	"env": {},
+	"addons": [
+		{
+			"plan": "heroku-postgresql",
+			"options": {
+				"version": "9.6"
+			}
+		}
+	]
+}
