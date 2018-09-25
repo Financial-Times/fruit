@@ -37,6 +37,15 @@
 				</div>
 
 				<div class="o-forms">
+					<label for="fruit-image-url" class="o-forms__label o-forms__label--optional">Image URL</label>
+					<div id="fruit-image-url-description" class="o-forms__additional-info">
+						A publicly accessible image of the fruit without an Origami Image Service wrapper.
+						<a href="https://www.google.co.uk/search?q={fruit.name}&tbm=isch&tbs=sur:fc" target="_blank" class="o-typography-link o-typography-link--external">See suggested images</a>
+					</div>
+					<input id="fruit-image-url" name="imageUrl" class="o-forms__text" value="{fruit.imageUrl}"/>
+				</div>
+
+				<div class="o-forms">
 					<input type="submit" value="Save Changes" class="o-buttons o-buttons--primary o-buttons o-buttons--big" />
 					<a href="/fruit/{fruit.id}" class="o-typography-link">Cancel</a>
 				</div>

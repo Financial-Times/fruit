@@ -93,7 +93,7 @@ function initFruitController(fruitApp, router) {
 		});
 	});
 
-	// Rate fruit
+	// Edit fruit
 	router.post('/fruit/:id/edit', express.urlencoded({extended: false}), async (request, response, next) => {
 		if (!request.authUser.get('is_admin')) {
 			return next();
@@ -108,6 +108,7 @@ function initFruitController(fruitApp, router) {
 		body.name = (body.name || '').trim();
 		body.description = (body.description || '').trim();
 		body.altNames = (body.altNames || '').trim();
+		body.imageUrl = (body.imageUrl || '').trim();
 		if (!body.name) {
 			return next(httpError(400));
 		}
@@ -115,12 +116,15 @@ function initFruitController(fruitApp, router) {
 			body.altNames = body.altNames.split(/[\r\n]+/)
 				.map(altName => altName.trim())
 				.filter(altName => altName);
+		} else {
+			body.altNames = [];
 		}
 
 		await fruit.update({
 			name: body.name,
 			description: body.description,
-			alt_names: body.altNames
+			alt_names: body.altNames,
+			image_url: body.imageUrl
 		});
 
 		response.redirect(`/fruit/${fruit.id}`)
