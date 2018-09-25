@@ -1,0 +1,49 @@
+{>"layout/full"/}
+
+{<title}
+	Editing {fruit.name} - Fruit
+{/title}
+
+{<content}
+
+	<div class="o-grid-row">
+		<div data-o-grid-colspan="12">
+
+			<h1>
+				Editing <a href="/fruit/{fruit.id}" class="o-typography-link">{fruit.name}</a>
+			</h1>
+
+			<form action="/fruit/{fruit.id}/edit" method="post">
+
+				<div class="o-forms">
+					<label for="fruit-name" class="o-forms__label">Name</label>
+					<input id="fruit-name" name="name" class="o-forms__text" value="{fruit.name}"/>
+				</div>
+
+				<div class="o-forms">
+					<label aria-describedby="fruit-description-description" for="fruit-description" class="o-forms__label o-forms__label--optional">Description</label>
+					<div id="fruit-description-description" class="o-forms__additional-info">
+						A brief description of the fruit.
+					</div>
+					<textarea id="fruit-description" name="description" class="o-forms__textarea">{fruit.description}</textarea>
+				</div>
+
+				<div class="o-forms">
+					<label aria-describedby="fruit-alt-names-description" for="fruit-alt-names" class="o-forms__label o-forms__label--optional">Alternative Names</label>
+					<div id="fruit-alt-names-description" class="o-forms__additional-info">
+						Alternative names for this fruit, one name per line
+					</div>
+					<textarea id="fruit-alt-names" name="altNames" class="o-forms__textarea">{#fruit.altNames}{.}{@sep}{~n}{/sep}{/fruit.altNames}</textarea>
+				</div>
+
+				<div class="o-forms">
+					<input type="submit" value="Save Changes" class="o-buttons o-buttons--primary o-buttons o-buttons--big" />
+					<a href="/fruit/{fruit.id}" class="o-typography-link">Cancel</a>
+				</div>
+
+			</form>
+
+		</div>
+	</div>
+
+{/content}

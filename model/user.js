@@ -56,7 +56,7 @@ function initUserModel(fruitApp) {
 				id: this.get('id'),
 				name: this.get('name'),
 				username: this.get('s3o_username'),
-				isAdmin: this.get('isAdmin'),
+				isAdmin: this.get('is_admin'),
 				meta: {
 					dateCreated: this.get('created_at'),
 					dateUpdated: this.get('updated_at')

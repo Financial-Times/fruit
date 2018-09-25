@@ -79,6 +79,53 @@ function initFruitController(fruitApp, router) {
 		response.redirect(`/fruit/${fruit.id}`)
 	});
 
+	// Fruit editing
+	router.get('/fruit/:id/edit', async (request, response, next) => {
+		if (!request.authUser.get('is_admin')) {
+			return next();
+		}
+		const fruit = await fruitApp.model.Fruit.fetchOneById(request.params.id);
+		if (!fruit) {
+			return next();
+		}
+		response.render('template/fruit/edit', {
+			fruit: fruit.serialize()
+		});
+	});
+
+	// Rate fruit
+	router.post('/fruit/:id/edit', express.urlencoded({extended: false}), async (request, response, next) => {
+		if (!request.authUser.get('is_admin')) {
+			return next();
+		}
+		const fruit = await fruitApp.model.Fruit.fetchOneById(request.params.id);
+		if (!fruit) {
+			return next();
+		}
+
+		// Some VERY basic sanitization and validation with no feedback...
+		const body = request.body;
+		body.name = (body.name || '').trim();
+		body.description = (body.description || '').trim();
+		body.altNames = (body.altNames || '').trim();
+		if (!body.name) {
+			return next(httpError(400));
+		}
+		if (body.altNames) {
+			body.altNames = body.altNames.split(/[\r\n]+/)
+				.map(altName => altName.trim())
+				.filter(altName => altName);
+		}
+
+		await fruit.update({
+			name: body.name,
+			description: body.description,
+			alt_names: body.altNames
+		});
+
+		response.redirect(`/fruit/${fruit.id}`)
+	});
+
 }
 
 module.exports = initFruitController;

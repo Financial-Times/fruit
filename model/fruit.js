@@ -33,7 +33,7 @@ function initFruitModel(fruitApp) {
 				this.attributes.updated_at = new Date();
 
 				// Encode the alt names if they have changed
-				if (this.hasChanged('alt_names')) {
+				if (this.hasChanged('alt_names') || typeof this.attributes.alt_names !== 'string') {
 					this.attributes.alt_names = JSON.stringify(this.attributes.alt_names);
 				}
 

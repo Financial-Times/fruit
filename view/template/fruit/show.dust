@@ -11,6 +11,9 @@
 
 			<h1>
 				{fruit.name}
+				{?authUser.isAdmin}
+					<a href="/fruit/{fruit.id}/edit" class="o-typography-link">edit</a>
+				{/authUser.isAdmin}
 			</h1>
 
 			{?fruit.description}

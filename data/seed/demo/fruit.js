@@ -8,7 +8,7 @@ exports.seed = async database => {
 		{
 			id: 'm8b2xsek4',
 			s3o_username: 'rowan.manning',
-			is_admin: false
+			is_admin: true
 		},
 		{
 			id: 'm8b2xsek3',
