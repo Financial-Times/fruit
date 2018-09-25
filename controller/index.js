@@ -6,6 +6,7 @@ const initHomeController = require('./home');
 const initFruitController = require('./fruit');
 const initPeopleController = require('./people');
 const notFound = require('../lib/middleware/not-found');
+const {redirectToHTTPS} = require('express-http-to-https');
 
 /**
  * Initialise the controllers.
@@ -19,6 +20,9 @@ function initControllers(fruitApp) {
 		caseSensitive: true,
 		strict: true
 	});
+
+	// Redirect HTTP to HTTPS
+	router.use('/httptest', redirectToHTTPS([/localhost:(\d{4})/], [], 302));
 
 	// Serve static files
 	router.use(express.static(`${__dirname}/../public`));
