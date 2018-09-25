@@ -1,0 +1,23 @@
+{>"layout/full"/}
+
+{<title}
+	Home - Fruit
+{/title}
+
+{<content}
+
+	<div class="o-grid-row">
+
+		<div data-o-grid-colspan="12 M6">
+
+			<h1>Fruit Stats</h1>
+
+			<p><strong>{stats.userCount}</strong> people who have opened Fruit and signed in via s3o.</p>
+			<p><strong>{stats.raterCount}</strong> different people have rated a fruit</p>
+			<p><strong>{stats.ratingsCount}</strong> fruit ratings have been created</p>
+
+		</div>
+
+	</div>
+
+{/content}

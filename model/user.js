@@ -144,6 +144,18 @@ function initUserModel(fruitApp) {
 				qb.where('s3o_username', username);
 			}).count();
 			return (count > 0);
+		},
+
+		// Count all users
+		countAll() {
+			return User.collection().count();
+		},
+
+		// Count all users who have rated fruit
+		async countAllWithRatings() {
+			return (await User.fetchAll()).filter(user => {
+				return user.serialize().ratingCount;
+			}).length;
 		}
 
 	});

@@ -5,6 +5,7 @@ const express = require('express');
 const initHomeController = require('./home');
 const initFruitController = require('./fruit');
 const initPeopleController = require('./people');
+const iniStatsController = require('./stats');
 const notFound = require('../lib/middleware/not-found');
 const {redirectToHTTPS} = require('express-http-to-https');
 
@@ -60,6 +61,7 @@ function initControllers(fruitApp) {
 	initHomeController(fruitApp, router);
 	initFruitController(fruitApp, router);
 	initPeopleController(fruitApp, router);
+	iniStatsController(fruitApp, router);
 
 	// Middleware to handle errors
 	router.use(notFound());

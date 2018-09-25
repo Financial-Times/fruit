@@ -178,6 +178,11 @@ function initFruitRatingModel(fruitApp) {
 			}).fetchOne();
 		},
 
+		// Count all ratings
+		countAll() {
+			return FruitRating.collection().count();
+		}
+
 	});
 
 	return FruitRating;
