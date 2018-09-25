@@ -77,3 +77,18 @@ img {
 	position: relative;
 	padding-left: 1.5rem
 }
+
+.avatar {
+	float: left;
+	display: block;
+	margin-right: 8px;
+	margin-bottom: 8px;
+}
+.avatar--40 {
+	width: 40px;
+}
+.avatar--80 {
+	width: 80px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}

@@ -62,6 +62,11 @@ function initFruitModel(fruitApp) {
 		// Override default serialization so we can control output
 		serialize() {
 			const ratingCount = this.related('ratings').length;
+			const images = {
+				full: this.get('image_url') || 'https://fruit.in.ft.com/default-image.png'
+			};
+			images.avatar80 = `https://www.ft.com/__origami/service/image/v2/images/raw/${encodeURIComponent(images.full)}?source=fruit&width=80&height=80`;
+			images.avatar160 = `https://www.ft.com/__origami/service/image/v2/images/raw/${encodeURIComponent(images.full)}?source=fruit&width=160&height=160`;
 			return {
 				id: this.get('id'),
 				creatorId: this.get('creator_id'),
@@ -69,6 +74,7 @@ function initFruitModel(fruitApp) {
 				altNames: this.get('alt_names'),
 				description: this.get('description'),
 				imageUrl: this.get('image_url'),
+				images,
 				meta: {
 					dateCreated: this.get('created_at'),
 					dateUpdated: this.get('updated_at')

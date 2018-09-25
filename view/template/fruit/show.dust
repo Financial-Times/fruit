@@ -9,6 +9,8 @@
 	<div class="o-grid-row">
 		<div data-o-grid-colspan="12">
 
+			<img class="avatar avatar--80" src="{fruit.images.avatar160}" alt="{fruit.name}"/>
+
 			<h1>
 				{fruit.name}
 				{?authUser.isAdmin}

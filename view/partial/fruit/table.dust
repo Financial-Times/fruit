@@ -11,6 +11,7 @@
 		{#fruit}
 			<tr>
 				<td>
+					<img class="avatar avatar--40" src="{images.avatar80}" alt="{name}"/>
 					<strong><a href="/fruit/{id}" class="o-typography-link">{name}</a></strong>{?altNames}{~s}(Also known as: {#altNames}{.}{@sep},{~s}{/sep}{/altNames}){/altNames}<br/>
 					{?description}{description}{/description}
 				</td>
