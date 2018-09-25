@@ -28,6 +28,7 @@
 	<link rel="stylesheet" href="/main.css" />
 
 	<!-- JavaScript -->
+	<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 	<script>
 		(function(src) {
 			if (cutsTheMustard) {
