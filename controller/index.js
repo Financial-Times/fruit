@@ -22,7 +22,7 @@ function initControllers(fruitApp) {
 	});
 
 	// Redirect HTTP to HTTPS
-	router.use('/httptest', redirectToHTTPS([/localhost:(\d{4})/], [], 302));
+	router.use(redirectToHTTPS([/localhost:(\d{4})/], [], 302));
 
 	// Serve static files
 	router.use(express.static(`${__dirname}/../public`));
