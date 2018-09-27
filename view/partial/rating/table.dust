@@ -22,6 +22,7 @@
 				{@select key="{context}"}
 					{@eq value="person"}
 						<td>
+							<img class="avatar avatar--40" src="{fruit.images.avatar80}" alt="{fruit.name}"/>
 							<strong><a href="/fruit/{fruit.id}" class="o-typography-link">{fruit.name}</a></strong><br/>
 							{?comments}{comments}<br/>{/comments}
 							<em>published <time data-o-component="o-date" class="o-date" datetime="{meta.dateCreated.toISOString}">{meta.dateCreated.toISOString}</time></em>
