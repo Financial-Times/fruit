@@ -11,9 +11,11 @@ const httpError = require('http-errors');
  */
 function initPeopleController(fruitApp, router) {
 
-	// All people
+	// All people (who have rated a fruit)
 	router.get('/people', async (request, response) => {
-		const people = (await fruitApp.model.User.fetchAll()).map(item => item.serialize());
+		const people = (await fruitApp.model.User.fetchAll())
+			.map(item => item.serialize())
+			.filter(item => item.ratingCount > 0);
 		response.render('template/people/list', {
 			people
 		});
