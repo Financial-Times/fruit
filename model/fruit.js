@@ -129,9 +129,9 @@ function initFruitModel(fruitApp) {
 		async create(data) {
 			const fruit = new Fruit({
 				name: data.name,
-				altNames: data.alt_names,
+				alt_names: data.alt_names,
 				description: data.description,
-				imageUrl: data.image_url,
+				image_url: data.image_url,
 				creator_id: data.creator_id
 			});
 			await fruit.save();
