@@ -195,6 +195,13 @@ exports.seed = async database => {
 			description: `It's some kind of fruit`
 		},
 		{
+			id: 'PqvCpYNxZ',
+			name: 'Granadilla',
+			creator_id: 'm8b2xsek4',
+			alt_names: JSON.stringify([]),
+			description: `It's some kind of fruit`
+		},
+		{
 			id: 'didwPVV8Hso',
 			name: 'Grape',
 			creator_id: 'm8b2xsek4',
@@ -293,8 +300,8 @@ exports.seed = async database => {
 			description: `It's some kind of fruit`
 		},
 		{
-			id: '1ulmpsvyoaw',
-			name: 'Naseberry',
+			id: 'XAx0q2yRB',
+			name: 'Mangosteen',
 			creator_id: 'm8b2xsek4',
 			alt_names: JSON.stringify([]),
 			description: `It's some kind of fruit`
@@ -309,6 +316,13 @@ exports.seed = async database => {
 		{
 			id: 'nB92gzQNJNn',
 			name: 'Morello Cherry',
+			creator_id: 'm8b2xsek4',
+			alt_names: JSON.stringify([]),
+			description: `It's some kind of fruit`
+		},
+		{
+			id: '1ulmpsvyoaw',
+			name: 'Naseberry',
 			creator_id: 'm8b2xsek4',
 			alt_names: JSON.stringify([]),
 			description: `It's some kind of fruit`
@@ -582,6 +596,13 @@ exports.seed = async database => {
 		{
 			id: 'M8pGkDoUGLC',
 			name: 'Watermelon',
+			creator_id: 'm8b2xsek4',
+			alt_names: JSON.stringify([]),
+			description: `It's some kind of fruit`
+		},
+		{
+			id: 'QYm3dbQCl',
+			name: 'Wood Apple',
 			creator_id: 'm8b2xsek4',
 			alt_names: JSON.stringify([]),
 			description: `It's some kind of fruit`
