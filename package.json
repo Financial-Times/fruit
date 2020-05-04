@@ -29,13 +29,14 @@
     "express-http-to-https": "^1.1.4",
     "http-errors": "^1.6.2",
     "joi": "^13.0.2",
-    "knex": "^0.14.0",
-    "lodash": "^4.17.4",
+    "knex": "^0.19.5",
+    "lodash": "^4.17.12",
     "morgan": "^1.9.0",
     "nocache": "^2.0.0",
     "pg": "^7.4.0",
     "shortid": "^2.2.8",
-    "winston": "^2.4.0"
+    "winston": "^2.4.0",
+    "snyk": "^1.317.0"
   },
   "devDependencies": {
     "@rowanmanning/eslint-config": "^1.0.0",
@@ -57,6 +58,9 @@
   "main": "./lib/app.js",
   "scripts": {
     "test": "make ci",
-    "start": "node index.js"
-  }
+    "start": "node index.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
+  },
+  "snyk": true
 }
